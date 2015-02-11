@@ -9,7 +9,7 @@
 #import "MenuCell.h"
 
 @interface MenuCell ()<UIGestureRecognizerDelegate>
-@property(nonatomic, assign) CGFloat memuWidth;
+@property(nonatomic, assign) CGFloat menuWidth;
 @property(nonatomic, assign) CGFloat panGestureInitialX;
 @end
 
@@ -83,7 +83,7 @@
     return _menuView;
 }
 
-- (CGFloat)memuWidth
+- (CGFloat)menuWidth
 {
     return CGRectGetWidth(self.menuView.frame);
 }
@@ -96,7 +96,7 @@
     
     CGRect frame = self.bounds;
     if (!hidden) {
-        frame.origin.x = -self.memuWidth;
+        frame.origin.x = -self.menuWidth;
     }
     
     [UIView animateWithDuration:(animated ? self.animationDuration : 0)
@@ -161,16 +161,16 @@
     }else if (recognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint velocity = [recognizer velocityInView:self.contentView];
         if (self.menusHidden || (velocity.x > 0 || [self.delegate shouldShowMenus:self])) {
-            
+            NSLog(@"UIGestureRecognizerStateChanged");
             if (self.selected) {
                 [self setSelected:NO animated:NO];
             }
             CGFloat panAmount = currentTouchPositionX - self.panGestureInitialX;
             self.panGestureInitialX = currentTouchPositionX;
-            CGFloat minOriginX = -self.memuWidth - self.bounceValue;
+            CGFloat minOriginX = -self.menuWidth - self.bounceValue;
             CGFloat maxOriginX = 0;
             CGFloat originX = CGRectGetMinX(self.disPlayView.frame) + panAmount;
-            NSLog(@"panAmount : %f  originX : %f", panAmount, originX);
+//            NSLog(@"panAmount : %f  originX : %f", panAmount, originX);
             if (originX > maxOriginX) {
                 originX = maxOriginX;
             }
@@ -178,20 +178,31 @@
                 originX = minOriginX;
             }
             
-            if ((originX < -0.5 * self.memuWidth && velocity.x < 0) || (velocity.x < -100)) {
-                self.shouldShowMenus = YES;
-            }
             
-            CGRect frame = self.disPlayView.frame;
-            frame.origin.x = originX;
-            NSLog(@"originX : %f", originX);
-//            self.disPlayView.frame = frame;
             
             CGPoint point = [recognizer translationInView:self.disPlayView];
-            self.disPlayView.center = CGPointMake(self.disPlayView.center.x + point.x, self.disPlayView.center.y);
+            
+            CGRect frame = self.disPlayView.frame;
+            originX = frame.origin.x + point.x;
+            NSLog(@"originX %f", originX);
+            if (originX > maxOriginX) {
+                originX = maxOriginX;
+            }
+            if (originX < minOriginX) {
+                originX = minOriginX;
+            }
+            frame.origin.x = originX;
+            self.disPlayView.frame = frame;
+            
+            if ((originX < -0.4 * self.menuWidth && velocity.x < 0) || (velocity.x < -100)) {
+                self.shouldShowMenus = YES;
+            }else{
+                self.shouldShowMenus = NO;
+            }
+            
             [recognizer setTranslation:CGPointMake(0, 0) inView:self.disPlayView];
         }
-        NSLog(@"UIGestureRecognizerStateChanged");
+//        NSLog(@"UIGestureRecognizerStateChanged");
     }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateFailed) {
         [self setMenusHidden:!self.shouldShowMenus animated:YES finishBlock:nil];
         NSLog(@"UIGestureRecognizerStateEnded");

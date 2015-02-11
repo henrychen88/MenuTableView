@@ -48,7 +48,7 @@
     if (!cell) {
         cell = [[CJCell alloc]initWithReuseIdentifier:cellIdentifier height:tableView.rowHeight];
     }
-    cell.keyLabel.text = [NSString stringWithFormat:@"Cell----%ld", (long)indexPath.row];
+    cell.keyLabel.text = [NSString stringWithFormat:@"Cellxxxxxxxxxxxxxxxxxxx----%ld", (long)indexPath.row];
     cell.delegate = self;
     return cell;
 }
@@ -60,7 +60,7 @@
         _overlayView.backgroundColor = [UIColor clearColor];
         _overlayView.hidden = YES;
         _overlayView.delegate = self;
-        _overlayView.backgroundColor = [UIColor clearColor];
+        _overlayView.backgroundColor = [UIColor grayColor];
         [self addSubview:_overlayView];
     }
     return _overlayView;
