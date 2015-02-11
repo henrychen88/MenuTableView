@@ -14,6 +14,11 @@
 		760B5C2E1A8A22B0007DD337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760B5C2D1A8A22B0007DD337 /* Images.xcassets */; };
 		760B5C311A8A22B0007DD337 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760B5C2F1A8A22B0007DD337 /* LaunchScreen.xib */; };
 		760B5C3D1A8A22B1007DD337 /* MenuTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B5C3C1A8A22B1007DD337 /* MenuTableViewTests.m */; };
+		7610A01C1A8AEA2900419186 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7610A01B1A8AEA2900419186 /* MenuCell.m */; };
+		7610A01F1A8B059700419186 /* MenuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7610A01E1A8B059700419186 /* MenuTableView.m */; };
+		7610A0221A8B066600419186 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7610A0211A8B066600419186 /* OverlayView.m */; };
+		7610A0251A8B2D6B00419186 /* CJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7610A0241A8B2D6B00419186 /* CJCell.m */; };
+		7610A0281A8B2DA900419186 /* CJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7610A0271A8B2DA900419186 /* CJTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,16 @@
 		760B5C361A8A22B1007DD337 /* MenuTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		760B5C3B1A8A22B1007DD337 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		760B5C3C1A8A22B1007DD337 /* MenuTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewTests.m; sourceTree = "<group>"; };
+		7610A01A1A8AEA2900419186 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		7610A01B1A8AEA2900419186 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		7610A01D1A8B059700419186 /* MenuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableView.h; sourceTree = "<group>"; };
+		7610A01E1A8B059700419186 /* MenuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableView.m; sourceTree = "<group>"; };
+		7610A0201A8B066600419186 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		7610A0211A8B066600419186 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		7610A0231A8B2D6B00419186 /* CJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCell.h; sourceTree = "<group>"; };
+		7610A0241A8B2D6B00419186 /* CJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCell.m; sourceTree = "<group>"; };
+		7610A0261A8B2DA900419186 /* CJTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTableView.h; sourceTree = "<group>"; };
+		7610A0271A8B2DA900419186 /* CJTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,7 @@
 		760B5C1F1A8A22B0007DD337 /* MenuTableView */ = {
 			isa = PBXGroup;
 			children = (
+				7610A0191A8AEA0C00419186 /* MenuTableView */,
 				760B5C241A8A22B0007DD337 /* AppDelegate.h */,
 				760B5C251A8A22B0007DD337 /* AppDelegate.m */,
 				760B5C271A8A22B0007DD337 /* ViewController.h */,
@@ -89,6 +105,10 @@
 				760B5C2D1A8A22B0007DD337 /* Images.xcassets */,
 				760B5C2F1A8A22B0007DD337 /* LaunchScreen.xib */,
 				760B5C201A8A22B0007DD337 /* Supporting Files */,
+				7610A0231A8B2D6B00419186 /* CJCell.h */,
+				7610A0241A8B2D6B00419186 /* CJCell.m */,
+				7610A0261A8B2DA900419186 /* CJTableView.h */,
+				7610A0271A8B2DA900419186 /* CJTableView.m */,
 			);
 			path = MenuTableView;
 			sourceTree = "<group>";
@@ -117,6 +137,19 @@
 				760B5C3B1A8A22B1007DD337 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7610A0191A8AEA0C00419186 /* MenuTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7610A01A1A8AEA2900419186 /* MenuCell.h */,
+				7610A01B1A8AEA2900419186 /* MenuCell.m */,
+				7610A01D1A8B059700419186 /* MenuTableView.h */,
+				7610A01E1A8B059700419186 /* MenuTableView.m */,
+				7610A0201A8B066600419186 /* OverlayView.h */,
+				7610A0211A8B066600419186 /* OverlayView.m */,
+			);
+			name = MenuTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7610A0281A8B2DA900419186 /* CJTableView.m in Sources */,
+				7610A01F1A8B059700419186 /* MenuTableView.m in Sources */,
+				7610A0251A8B2D6B00419186 /* CJCell.m in Sources */,
+				7610A0221A8B066600419186 /* OverlayView.m in Sources */,
 				760B5C291A8A22B0007DD337 /* ViewController.m in Sources */,
 				760B5C261A8A22B0007DD337 /* AppDelegate.m in Sources */,
+				7610A01C1A8AEA2900419186 /* MenuCell.m in Sources */,
 				760B5C231A8A22B0007DD337 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +450,7 @@
 				760B5C421A8A22B1007DD337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		760B5C431A8A22B1007DD337 /* Build configuration list for PBXNativeTarget "MenuTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +459,7 @@
 				760B5C451A8A22B1007DD337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,16 +8,31 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "MenuTableView.h"
 
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property(nonatomic, strong) MenuTableView *tableView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.title = @"MenuTableView";
+    
+    [self.view addSubview:self.tableView];
 }
+
+- (MenuTableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[MenuTableView alloc]initWithFrame:self.view.bounds];
+    }
+    return _tableView;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
